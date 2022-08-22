@@ -1,11 +1,13 @@
 <div style="text-align: center;">
-  <h2>Welcome to {{ title }} app!</h2>
+  <h1>{{message}}</h1>
   <!-- HTML custom tag -->
-  <app-test></app-test>
+  <!-- <app-test></app-test> -->
   <!-- HTML class name -->
   <!-- <div class="app-test"></div> -->
   <!-- HTML custom attribute -->
   <!-- <div app-test></div>  -->
+  <!-- HTML custom tag, attribute and event -->
+  <app-test (childEvent)="message=$event" [parentName]="name"></app-test>
 </div>
 
 <router-outlet></router-outlet>

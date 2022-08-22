@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Angular Overview';
+  public name = "Almasud";
+  public message = "";
 }
