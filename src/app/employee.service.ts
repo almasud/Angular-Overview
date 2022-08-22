@@ -1,18 +1,18 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { IEmployee } from './models/employee';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmployeeService {
+  private _url = "./assets/data/employee.json";  // Should a remote URL
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  getEmployees() {
-    return [
-      { 'id': 1, 'name': 'Abdullah', 'age': 24 },
-      { 'id': 2, 'name': 'Almasud', 'age': 27 },
-      { 'id': 3, 'name': 'Mahin', 'age': 35 },
-    ];
+  getEmployees(): Observable<IEmployee[]> {
+    return this.http.get<IEmployee[]>(this._url);
   }
-  
+
 }
