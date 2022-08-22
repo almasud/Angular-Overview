@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
 
+export type Employee = {
+  'id': number,
+  'name': string,
+  'age': number
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,6 +13,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Angular Overview';
-  public name = "almasud";
-  public message = "";
 }
