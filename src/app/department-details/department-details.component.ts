@@ -6,8 +6,15 @@ import { AppConstant } from '../util/app_constants';
   selector: 'app-department-details',
   template: `
     <h3>Youe selected depatment with id: {{departmentId}}</h3>
-    <button (click)="goPrevious()">Previous</button>
-    <button (click)="goNext()">Next</button>
+    <div>
+      <button (click)="onOverview()">Overview</button>
+      <button (click)="onContact()">Contact</button>
+    </div>
+    <router-outlet></router-outlet>
+    <div>
+      <button (click)="goPrevious()">Previous</button>
+      <button (click)="goNext()">Next</button>
+    </div>
     <div>
       <button style="margin-top: 8px;" (click)="goBack()">Back</button>
     </div>
@@ -45,6 +52,13 @@ export class DepartmentDetailsComponent implements OnInit {
     // this.router.navigate([AppConstant.ROUTE_DEPARTMENTS, {id: this.departmentId}]);
     // Relative navigation
     this.router.navigate(['../', {id: this.departmentId}], {relativeTo: this.activatedRoute});
+  }
+
+  onOverview() {
+    this.router.navigate([AppConstant.ROUTE_DEPARTMENT_OVERVIEW], {relativeTo: this.activatedRoute});
+  }
+  onContact() {
+    this.router.navigate([AppConstant.ROUTE_DEPARTMENT_CONTACT], {relativeTo: this.activatedRoute});
   }
 
 }
