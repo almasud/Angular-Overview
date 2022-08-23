@@ -8,6 +8,9 @@ import { AppConstant } from '../util/app_constants';
     <h3>Youe selected depatment with id: {{departmentId}}</h3>
     <button (click)="goPrevious()">Previous</button>
     <button (click)="goNext()">Next</button>
+    <div>
+      <button style="margin-top: 8px;" (click)="goBack()">Back</button>
+    </div>
   `,
   styles: [
   ]
@@ -35,6 +38,10 @@ export class DepartmentDetailsComponent implements OnInit {
 
   goNext() {
     this.router.navigate([AppConstant.ROUTE_DEPARTMENTS, this.departmentId + 1]);
+  }
+
+  goBack() {
+    this.router.navigate([AppConstant.ROUTE_DEPARTMENTS, {id: this.departmentId}]);
   }
 
 }
