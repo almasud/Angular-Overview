@@ -2,8 +2,8 @@
   <h1 style="text-align: center;">{{title | titlecase}}</h1>
 </div>
 <nav>
-  <a routerLink="/departments" routerLinkActive="active">Departments</a>
-  <a routerLink="/employees" routerLinkActive="active">Employees</a>
+  <a routerLink={{appConstant.ROUTE_DEPARTMENTS}} routerLinkActive="active">Departments</a>
+  <a routerLink={{appConstant.ROUTE_EMPLOYESS}} routerLinkActive="active">Employees</a>
 </nav>
 
 <router-outlet></router-outlet>

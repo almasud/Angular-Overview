@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppConstant } from './util/app_constants';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Angular - Routing & Navigation';
+  readonly appConstant = AppConstant;
 }
