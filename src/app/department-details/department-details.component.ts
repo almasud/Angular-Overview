@@ -41,6 +41,7 @@ export class DepartmentDetailsComponent implements OnInit {
   }
 
   goBack() {
+    // Optional route parameters {property: value}
     this.router.navigate([AppConstant.ROUTE_DEPARTMENTS, {id: this.departmentId}]);
   }
 
