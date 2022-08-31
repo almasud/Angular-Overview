@@ -9,9 +9,9 @@ import { User } from './models/user';
 export class AppComponent {
   topics = ['Angular', 'React', 'Vue'];
   userModel = new User(
-    "Almasud", 
+    "", 
     "dev.almasud@gmail.com", 
-    "015000000", 
+    "015", 
     this.topics[0], 
     "morning", 
     true
