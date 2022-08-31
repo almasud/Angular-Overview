@@ -21,18 +21,21 @@
         pattern="^\d{11}$" [(ngModel)]="userModel.phone">
     </div>
     
-    <div *ngIf="phone.errors && (phone.invalid || phone.touched)">
+    <div *ngIf="phone.errors && phone.touched">
       <small class="text-danger" *ngIf="phone.errors['required']">Phone number is required</small>
       <small class="text-danger" *ngIf="phone.errors['pattern']">Phone number is must be 10 digit</small>
     </div>
     <div class="mb-3"></div>
-    <div class="form-group mb-3">
-      <select class="form-select" name="interested-in" [(ngModel)]="userModel.topic">
-        <option selected>I am interested in</option>
+    <div class="form-group">
+      <select (blur)="topicChange(interest.value)" (change)="topicChange(interest.value)"
+        class="form-select" name="interested-in" #interest="ngModel" 
+        [(ngModel)]="userModel.topic" [class.is-invalid]="hasTopicError && interest.touched">
+        <option value="default">I am interested in</option>
         <option *ngFor="let topic of topics">{{topic}}</option>
       </select>
     </div>
-
+    <small class="text-danger" [class.d-none]="!hasTopicError || interest.untouched">Please choose a topic</small>
+    <div class="mb-3"></div>
     <div class="mb-3">
       <label>Time preference</label>
       <div class="form-check">

@@ -9,11 +9,23 @@ import { User } from './models/user';
 export class AppComponent {
   topics = ['Angular', 'React', 'Vue'];
   userModel = new User(
-    "", 
+    "Almasud", 
     "dev.almasud@gmail.com", 
     "015", 
-    this.topics[0], 
+    "default", 
     "morning", 
     true
   );
+  hasTopicError: boolean = true;
+
+  topicChange(value: string) {
+    console.log("value: " + value);
+
+    if(value=="default") {
+      this.hasTopicError = true;
+    } else {
+      this.hasTopicError = false;
+    }
+  }
+
 }
