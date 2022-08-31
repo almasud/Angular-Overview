@@ -1,6 +1,7 @@
 <div class="container-fluid">
   <h1>Bootstrap Enrollment Form</h1>
-  <form #userForm="ngForm">
+  <form #userForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+
     <div class="form-group">
       <label>Name</label>
       <input type="text" required class="form-control" name="userName" 

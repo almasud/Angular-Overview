@@ -28,4 +28,8 @@ export class AppComponent {
     }
   }
 
+  onSubmit() {
+    console.log(this.userModel);
+  }
+
 }
